@@ -36,7 +36,7 @@ public class SpinnerDatePickerFragment extends DialogFragment {
                 getActivity(),
                 new SpinnerDatePickerDialog.OnDateSetListener() {
                     @Override
-                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                    public void onDateSet(Calendar calendar, int year, int monthOfYear, int dayOfMonth) {
                         onDateSetListener.onDateSet(SpinnerDatePickerFragment.this, year, monthOfYear, dayOfMonth);
                     }
                 },

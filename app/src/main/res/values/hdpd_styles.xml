@@ -66,6 +66,15 @@
         <item name="startYear">1900</item>
     </style>
 
+    <style name="Holo.TimePicker">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textColorPrimary">#ffffff</item>
+        <item name="android:textColorPrimaryInverse">#ff231b14</item>
+        <item name="forceShownState">false</item>
+        <item name="layout">@layout/time_picker_holo</item>
+        <item name="spinnersShown">true</item>
+    </style>
+
     <style name="Holo.CalendarView">
         <item name="dateTextAppearance">?android:textAppearanceSmall</item>
         <item name="firstDayOfWeek">1</item>

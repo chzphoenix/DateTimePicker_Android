@@ -15,6 +15,7 @@
     <attr name="numberPickerInputTextStyle" format="reference" />
     <attr name="numberPickerUpButtonStyle" format="reference" />
     <attr name="datePickerStyle" format="reference" />
+    <attr name="timePickerStyle" format="reference" />
 
     <attr name="calendarViewShown" format="boolean" />
     <attr name="calendarViewStyle" format="reference" />
@@ -68,6 +69,12 @@
         <attr name="minDate" />
         <attr name="spinnersShown" />
         <attr name="startYear" />
+    </declare-styleable>
+
+    <declare-styleable name="TimePicker">
+        <attr name="forceShownState" />
+        <attr name="layout" />
+        <attr name="spinnersShown" />
     </declare-styleable>
 
     <declare-styleable name="CalendarView">

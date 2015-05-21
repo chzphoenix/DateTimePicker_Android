@@ -35,7 +35,7 @@ public class SpinnerDatePickerDialog extends AlertDialog implements DialogInterf
         setButton(DialogInterface.BUTTON_POSITIVE,
                 getContext().getText(R.string.date_time_done), (OnClickListener) this);
         setButton(DialogInterface.BUTTON_NEGATIVE,
-                getContext().getText(android.R.string.cancel), (OnClickListener) this);
+                getContext().getText(R.string.date_time_cancel), (OnClickListener) this);
         setIcon(0);
         LayoutInflater inflater = LayoutInflater.from(getContext());
         View view = inflater.inflate(R.layout.date_picker_dialog, null);
@@ -47,6 +47,10 @@ public class SpinnerDatePickerDialog extends AlertDialog implements DialogInterf
 
     public SpinnerDatePickerDialog(Context context, OnDateSetListener callBack, int year, int monthOfYear, int dayOfMonth) {
         this(context, 0, callBack, year, monthOfYear, dayOfMonth);
+    }
+
+    public SpinnerDatePickerDialog(Context context, OnDateSetListener callBack) {
+        this(context, 0, callBack, Calendar.getInstance().get(Calendar.YEAR), Calendar.getInstance().get(Calendar.MONTH), Calendar.getInstance().get(Calendar.DAY_OF_MONTH));
     }
 
     public DatePicker getDatePicker() {
@@ -87,7 +91,7 @@ public class SpinnerDatePickerDialog extends AlertDialog implements DialogInterf
     private void tryNotifyDateSet() {
         if (mCallBack != null) {
             mDatePicker.clearFocus();
-            mCallBack.onDateSet(mDatePicker, mDatePicker.getYear(),
+            mCallBack.onDateSet(mDatePicker.getCurrentDate(), mDatePicker.getYear(),
                     mDatePicker.getMonth(), mDatePicker.getDayOfMonth());
         }
     }
@@ -118,7 +122,7 @@ public class SpinnerDatePickerDialog extends AlertDialog implements DialogInterf
     }
 
     public interface OnDateSetListener {
-        void onDateSet(DatePicker view, int year, int monthOfYear,
+        void onDateSet(Calendar calendar, int year, int monthOfYear,
                        int dayOfMonth);
     }
 

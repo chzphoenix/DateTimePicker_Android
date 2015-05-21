@@ -247,6 +247,10 @@ public class DatePicker extends FrameLayout {
         return currentDate.get(Calendar.YEAR);
     }
 
+    public Calendar getCurrentDate(){
+        return currentDate;
+    }
+
     public void init(int year, int monthOfYear, int dayOfMonth,
                      OnDateChangedListener onDateChangedListener) {
         setOnDateChangedListener(onDateChangedListener);
